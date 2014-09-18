@@ -35,6 +35,7 @@ setup(
     zip_safe = False,
     install_requires=[
         'pbcore >= 0.8.0',
-        'numpy >= 1.6.0'
+        'numpy >= 1.6.0',
+        'h5py >= 1.3.0'
         ]
     )
