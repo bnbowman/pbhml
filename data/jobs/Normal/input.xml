@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<pacbioAnalysisInputs>
+  <dataReferences>
+    <url ref="run:0000000-0000"><location>/mnt/secondary-siv/testdata/exth5/HLA_pool2/Analysis_Results/m140307_221913_42203_c100626172550000001823119008061414_s1_p0.1.bax.h5</location></url>
+    <url ref="run:0000000-0001"><location>/mnt/secondary-siv/testdata/exth5/HLA_pool2/Analysis_Results/m140307_221913_42203_c100626172550000001823119008061414_s1_p0.2.bax.h5</location></url>
+    <url ref="run:0000000-0002"><location>/mnt/secondary-siv/testdata/exth5/HLA_pool2/Analysis_Results/m140307_221913_42203_c100626172550000001823119008061414_s1_p0.3.bax.h5</location></url>
+  </dataReferences>
+</pacbioAnalysisInputs>

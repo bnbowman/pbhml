@@ -1,0 +1,73 @@
+digraph "workflow://Anonymous/Workflow#summary" {
+"file://Anonymous//home/UNIXHOME/bbowman/2014/09/HLA_Hackathon/Single_11/input.xml" [shape=component, label="/home/UNIXHOME/bbowman/2014/09/HLA_Hackathon/Single_11/input.xml", fillcolor="#EEEEEE", style=filled, fontname="Times New Roman"];
+
+"file://Anonymous/data/amplicon_analysis.csv" [shape=component, label="data/amplicon_analysis.csv", fillcolor="#EEEEEE", style=filled, fontname="Times New Roman"];
+
+"file://Anonymous/data/amplicon_analysis.fastq" [shape=component, label="data/amplicon_analysis.fastq", fillcolor="#EEEEEE", style=filled, fontname="Times New Roman"];
+
+"file://Anonymous/data/amplicon_analysis_summary.csv" [shape=component, label="data/amplicon_analysis_summary.csv", fillcolor="#EEEEEE", style=filled, fontname="Times New Roman"];
+
+"task://Anonymous/P_Barcode/barcodeJsonReport" [shape=octagon, label="P_Barcode/barcodeJsonReport\n0:00:24", color="#000000", fillcolor="#FED98E", style=filled, fontname="Times New Roman"];
+
+"task://Anonymous/P_Barcode/labelZMWs" [shape=octagon, label="P_Barcode/labelZMWs\n0:02:45", color="#000000", fillcolor="#FED98E", style=filled, fontname="Times New Roman"];
+
+"file://Anonymous/results/overview.json" [shape=component, label="results/overview.json", fillcolor="#EEEEEE", style=filled, fontname="Times New Roman"];
+
+"file://Anonymous/data/amplicon_analysis.fasta" [shape=component, label="data/amplicon_analysis.fasta", fillcolor="#EEEEEE", style=filled, fontname="Times New Roman"];
+
+"file://Anonymous/results/amplicon_analysis_consensus_report.json" [shape=component, label="results/amplicon_analysis_consensus_report.json", fillcolor="#EEEEEE", style=filled, fontname="Times New Roman"];
+
+"file://Anonymous/input.fofn" [shape=component, label="input.fofn", fillcolor="#EEEEEE", style=filled, fontname="Times New Roman"];
+
+"file://Anonymous/results/barcode_report.json" [shape=component, label="results/barcode_report.json", fillcolor="#EEEEEE", style=filled, fontname="Times New Roman"];
+
+"task://Anonymous/P_AmpliconAnalysis/doBarcodeAmpliconAnalysis" [shape=octagon, label="P_AmpliconAnalysis/doBarcodeAmpliconAnalysis\n0:55:29", color="#000000", fillcolor="#AAAAAA", style=filled, fontname="Times New Roman"];
+
+"task://Anonymous/P_Fetch/adapterRpt" [shape=octagon, label="P_Fetch/adapterRpt\n0:01:03", color="#000000", fillcolor="#E78AC3", style=filled, fontname="Times New Roman"];
+
+"file://Anonymous/data/amplicon_analysis_zmws.csv" [shape=component, label="data/amplicon_analysis_zmws.csv", fillcolor="#EEEEEE", style=filled, fontname="Times New Roman"];
+
+"task://Anonymous/P_Fetch/overviewRpt" [shape=octagon, label="P_Fetch/overviewRpt\n0:00:02", color="#000000", fillcolor="#E78AC3", style=filled, fontname="Times New Roman"];
+
+"file://Anonymous/results/filter_reports_adapters.json" [shape=component, label="results/filter_reports_adapters.json", fillcolor="#EEEEEE", style=filled, fontname="Times New Roman"];
+
+"task://Anonymous/P_Fetch/toFofn" [shape=octagon, label="P_Fetch/toFofn\n0:00:00", color="#000000", fillcolor="#E78AC3", style=filled, fontname="Times New Roman"];
+
+"task://Anonymous/P_AmpliconAnalysis/ampliconAnalysisInputReport" [shape=octagon, label="P_AmpliconAnalysis/ampliconAnalysisInputReport\n0:00:02", color="#000000", fillcolor="#AAAAAA", style=filled, fontname="Times New Roman"];
+
+"task://Anonymous/P_AmpliconAnalysis/ampliconAnalysisConsensusReport" [shape=octagon, label="P_AmpliconAnalysis/ampliconAnalysisConsensusReport\n0:00:02", color="#000000", fillcolor="#AAAAAA", style=filled, fontname="Times New Roman"];
+
+"task://Anonymous/P_Barcode/emitFastqs" [shape=octagon, label="P_Barcode/emitFastqs\n0:03:17", color="#000000", fillcolor="#FED98E", style=filled, fontname="Times New Roman"];
+
+"file://Anonymous/results/amplicon_analysis_input_report.json" [shape=component, label="results/amplicon_analysis_input_report.json", fillcolor="#EEEEEE", style=filled, fontname="Times New Roman"];
+
+"file://Anonymous/data/barcoded-fastqs.tgz" [shape=component, label="data/barcoded-fastqs.tgz", fillcolor="#EEEEEE", style=filled, fontname="Times New Roman"];
+
+"file://Anonymous/data/barcode.fofn" [shape=component, label="data/barcode.fofn", fillcolor="#EEEEEE", style=filled, fontname="Times New Roman"];
+"file://Anonymous//home/UNIXHOME/bbowman/2014/09/HLA_Hackathon/Single_11/input.xml" -> "task://Anonymous/P_Fetch/toFofn";
+"file://Anonymous/input.fofn" -> "task://Anonymous/P_Barcode/barcodeJsonReport";
+"file://Anonymous/data/barcode.fofn" -> "task://Anonymous/P_Barcode/emitFastqs";
+"task://Anonymous/P_AmpliconAnalysis/ampliconAnalysisInputReport" -> "file://Anonymous/results/amplicon_analysis_input_report.json";
+"task://Anonymous/P_AmpliconAnalysis/doBarcodeAmpliconAnalysis" -> "file://Anonymous/data/amplicon_analysis_zmws.csv";
+"file://Anonymous/input.fofn" -> "task://Anonymous/P_AmpliconAnalysis/doBarcodeAmpliconAnalysis";
+"file://Anonymous/data/barcode.fofn" -> "task://Anonymous/P_Barcode/barcodeJsonReport";
+"task://Anonymous/P_Barcode/barcodeJsonReport" -> "file://Anonymous/results/barcode_report.json";
+"file://Anonymous/data/amplicon_analysis_zmws.csv" -> "task://Anonymous/P_AmpliconAnalysis/ampliconAnalysisInputReport";
+"file://Anonymous/input.fofn" -> "task://Anonymous/P_Barcode/labelZMWs";
+"file://Anonymous/input.fofn" -> "task://Anonymous/P_Fetch/adapterRpt";
+"task://Anonymous/P_Barcode/emitFastqs" -> "file://Anonymous/data/barcoded-fastqs.tgz";
+"file://Anonymous/input.fofn" -> "task://Anonymous/P_Barcode/emitFastqs";
+"task://Anonymous/P_AmpliconAnalysis/doBarcodeAmpliconAnalysis" -> "file://Anonymous/data/amplicon_analysis.csv";
+"task://Anonymous/P_Fetch/adapterRpt" -> "file://Anonymous/results/filter_reports_adapters.json";
+"file://Anonymous/data/barcode.fofn" -> "task://Anonymous/P_AmpliconAnalysis/doBarcodeAmpliconAnalysis";
+"task://Anonymous/P_AmpliconAnalysis/ampliconAnalysisConsensusReport" -> "file://Anonymous/results/amplicon_analysis_consensus_report.json";
+"file://Anonymous/data/amplicon_analysis_summary.csv" -> "task://Anonymous/P_AmpliconAnalysis/ampliconAnalysisConsensusReport";
+"file://Anonymous/input.fofn" -> "task://Anonymous/P_Fetch/overviewRpt";
+"task://Anonymous/P_AmpliconAnalysis/doBarcodeAmpliconAnalysis" -> "file://Anonymous/data/amplicon_analysis.fasta";
+"task://Anonymous/P_Barcode/labelZMWs" -> "file://Anonymous/data/barcode.fofn";
+"task://Anonymous/P_AmpliconAnalysis/doBarcodeAmpliconAnalysis" -> "file://Anonymous/data/amplicon_analysis_summary.csv";
+"task://Anonymous/P_Fetch/overviewRpt" -> "file://Anonymous/results/overview.json";
+"task://Anonymous/P_Fetch/toFofn" -> "file://Anonymous/input.fofn";
+"task://Anonymous/P_AmpliconAnalysis/doBarcodeAmpliconAnalysis" -> "file://Anonymous/data/amplicon_analysis.fastq";
+"file://Anonymous/data/amplicon_analysis_summary.csv" -> "task://Anonymous/P_AmpliconAnalysis/ampliconAnalysisInputReport";
+}

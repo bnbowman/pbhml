@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<toc>
+<attributes>
+<attribute name="SmrtPipe version">1.87.139483</attribute>
+<attribute name="Job ID">000221002</attribute>
+<attribute name="Input">xml:input.xml</attribute>
+<attribute name="Settings">settings.xml</attribute>
+<attribute name="advanced">
+<apParameters>
+<apParam name="global.version" >1</apParam>
+<apParam name="global.fetch" >common/protocols/preprocessing/Fetch.1.xml</apParam>
+<apParam name="global.state" >active</apParam>
+<apParam name="global.description" >Amplicon Analysis</apParam>
+<apParam name="global.filtering" >common/protocols/filtering/SFilter.1.xml</apParam>
+<apParam name="global.barcodeRun" >True</apParam>
+<apParam name="global.name" >AmpliconAnalysis</apParam>
+<apParam name="p_barcode.adapterSidePad" >0</apParam>
+<apParam name="p_barcode.mode" >paired</apParam>
+<apParam name="p_barcode.insertSidePad" >0</apParam>
+<apParam name="p_barcode.barcodeRun" >True</apParam>
+<apParam name="p_barcode.moduleName" >P_Barcode</apParam>
+<apParam name="p_barcode.score" >11</apParam>
+<apParam name="p_barcode.barcode.fasta" >/home/UNIXHOME/bbowman/2014/09/HLA_Hackathon/SMRTbell_4x_barcodes.fasta</apParam>
+<apParam name="p_barcode.scoreFirst" >True</apParam>
+<apParam name="p_fetch.moduleName" >P_Fetch</apParam>
+<apParam name="p_ampliconanalysis.ignoreEnds" >50</apParam>
+<apParam name="p_ampliconanalysis.moduleName" >P_AmpliconAnalysis</apParam>
+<apParam name="p_ampliconanalysis.doBarcodes" >F4--R4</apParam>
+<apParam name="p_ampliconanalysis.minSnr" >5.0</apParam>
+<apParam name="p_ampliconanalysis.minLength" >3000</apParam>
+<apParam name="p_ampliconanalysis.maxReads" >2000</apParam>
+</apParameters>
+</attribute>
+</attributes>
+<reports>
+<report group="General">
+<name>Workflow</name>
+<link rel="report" type="text/html">workflow/Workflow.summary.html</link>
+</report>
+<report group="Diagnostic">
+<name>Json Overview Report</name>
+<link rel="report" type="text/html">results/overview.html</link>
+<link rel="report" type="application/json">results/overview.json</link>
+</report>
+<report group="Diagnostic">
+<name>Json Adapter Report</name>
+<link rel="report" type="text/html">results/filter_reports_adapters.html</link>
+<link rel="report" type="application/json">results/filter_reports_adapters.json</link>
+</report>
+<report group="General">
+<name>Barcode Report</name>
+<link rel="report" type="text/html">results/barcode_report.html</link>
+<link rel="report" type="application/json">results/barcode_report.json</link>
+</report>
+<report group="AMPLICONS">
+<name>Amplicon Analysis Input Report</name>
+<link rel="report" type="text/html">results/amplicon_analysis_input_report.html</link>
+<link rel="report" type="application/json">results/amplicon_analysis_input_report.json</link>
+</report>
+<report group="AMPLICONS">
+<name>Amplicon Analysis Consensus Report</name>
+<link rel="report" type="text/html">results/amplicon_analysis_consensus_report.html</link>
+<link rel="report" type="application/json">results/amplicon_analysis_consensus_report.json</link>
+</report>
+</reports>
+<dataFiles>
+<data group="Resequencing">
+<name>Barcoded Reads</name>
+<link rel="data" type="text/plain" format="fastq">data/barcoded-fastqs.tgz</link>
+</data>
+<data group="AMPLICONS">
+<name>Amplicon Sequences</name>
+<link rel="data" type="text/csv" format="csv">data/amplicon_analysis_zmws.csv</link>
+<link rel="data" type="text/plain" format="fasta">data/amplicon_analysis.fasta</link>
+<link rel="data" type="text/plain" format="fastq">data/amplicon_analysis.fastq</link>
+<link rel="data" type="text/csv" format="csv">data/amplicon_analysis_summary.csv</link>
+<link rel="data" type="text/csv" format="csv">data/amplicon_analysis.csv</link>
+</data>
+</dataFiles>
+<extlinks>
+</extlinks>
+<log file="log/smrtpipe.log" />
+</toc>

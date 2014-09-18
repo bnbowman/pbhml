@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<smrtpipeSettings>
+  <protocol version="1.3.0" id="AmpliconAnalysis" editable="false">
+    <param name="name" label="Protocol Name" editable="false">
+      <value>AmpliconAnalysis</value>
+      <input type="text" />
+      <rule required="true" />
+    </param>
+    <param name="description">
+      <value>Amplicon Analysis</value>
+      <textarea></textarea>
+    </param>
+    <param name="version" hidden="true">
+      <value>1</value>
+      <input type="text" />
+      <rule type="digits" required="true" min="1.0" />
+    </param>
+    <param name="state" hidden="true">
+      <value>active</value>
+      <input value="active" type="radio" />
+      <input value="inactive" type="radio" />
+    </param>
+    <param name="fetch" hidden="true" editable="false">
+      <value>common/protocols/preprocessing/Fetch.1.xml</value>
+    </param>
+    <param name="filtering" editable="false">
+      <value>common/protocols/filtering/SFilter.1.xml</value>
+      <select multiple="true">
+        <import extension="xml" contentType="text/directory">common/protocols/filtering</import>
+      </select>
+    </param>
+    <param name="barcodeRun">
+	<value>True</value>
+    </param>
+  </protocol>
+  <module label="Fetch v1" id="P_Fetch" editableInJob="true"></module>
+  <module name="P_Barcode">
+    <param name="barcodeRun">
+	<value>True</value>
+    </param>
+    <param name="barcode.fasta">
+        <value>/home/UNIXHOME/bbowman/2014/09/HLA_Hackathon/SMRTbell_4x_barcodes.fasta</value>
+    </param>
+    <param name="mode">
+        <value>paired</value>
+    </param>
+    <param name="scoreFirst">
+        <value>True</value>
+    </param>
+    <param name="adapterSidePad">
+        <value>0</value>
+    </param>
+    <param name="insertSidePad">
+        <value>0</value>
+    </param>
+    <param name="score">
+        <value>11</value>
+    </param>
+  </module>
+  <module label="AmpliconAnalysis" id="P_AmpliconAnalysis">
+    <param name="minLength">
+      <value>3000</value>
+    </param>
+    <param name="maxReads">
+      <value>2000</value>
+    </param>
+    <param name="minSnr">
+      <value>5.0</value>
+    </param>
+    <param name="ignoreEnds">
+      <value>50</value>
+    </param>
+    <param name="fastxByBarcode">
+      <value>True</value>
+    </param>
+  </module>
+</smrtpipeSettings>

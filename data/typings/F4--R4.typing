@@ -1,0 +1,7 @@
+Sequence                                  gLen  gType             gPctId nMis Indel cLen cType          cPctId Type
+BarcodeF4--R4_Cluster2_Phase0_NumReads316 3138  HLA-A*02:01:01:01 100.0  0    0     1093 HLA-A*02:01:01 100.0  HLA-A*02:01:01:01
+BarcodeF4--R4_Cluster3_Phase3_NumReads209 3124  HLA-A*11:01:01    100.0  0    0     1093 HLA-A*11:01:01 100.0  HLA-A*11:01:01
+BarcodeF4--R4_Cluster1_Phase0_NumReads148 3408  HLA-B*44:02:01:01 100.0  0    0     1045 HLA-B*44:02:01 100.0  HLA-B*44:02:01:01
+BarcodeF4--R4_Cluster1_Phase4_NumReads171 3426  HLA-B*50:01:01    100.0  0    0     1045 HLA-B*50:01:01 100.0  HLA-B*50:01:01
+BarcodeF4--R4_Cluster0_Phase5_NumReads130 3438  HLA-C*05:01:01:02 100.0  0    0     1096 HLA-C*05:01:01 100.0  HLA-C*05:01:01:02
+BarcodeF4--R4_Cluster0_Phase0_NumReads170 3438  HLA-C*06:02:01:02 100.0  0    0     1096 HLA-C*06:02:01 100.0  HLA-C*06:02:01:02

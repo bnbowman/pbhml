@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+        <rules>
+            <inputs>
+                <!-- Files are assumed be in the basedir job/results Example below-->
+                <!-- <file>overview.json</file> -->
+                <file>amplicon_analysis_input_report.json</file>
+            </inputs>
+            <attributesRules />
+            <tablesRules />
+            <plotGroupsRules />
+        </rules>

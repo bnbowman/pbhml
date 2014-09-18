@@ -1,0 +1,405 @@
+<html xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:pb="http://www.pacificbiosciences.com/2008/pbxsl">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>No Job Name</title>
+      <link rel="alternate" type="application/rdf+xml" href="metadata.rdf"><style type="text/css">
+body {
+  font: normal 11px Arial, Helvetica, sans-serif;
+  color: #333;
+  background: #ffffff;
+  width: 888px;
+}
+
+a { 
+  color: #333; 
+  font-size: 12px;
+  text-decoration: none;
+}
+a:hover { 
+  color: rgb(222,119,40); 
+}
+a:active { 
+  color: rgb(15,128,209); 
+}
+
+table {
+  border-spacing: 0;
+}
+
+table, td, th {
+  vertical-align: middle;
+}
+
+.reportBody h4 {
+  font-size: 16px;
+  font-weight: bold;
+  text-align: left;
+  margin-bottom: 8px;
+  padding-bottom: 6px; 
+  color: #333;
+  border-bottom: solid 1px #333;
+  text-transform: uppercase;
+}
+
+div.title {
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+
+#attrstable {
+  font-size: 12px;
+  width: 880px;
+}
+#attrstable td {
+  padding: 2px 8px;
+}
+#attrstable td.attr {
+  width: 90px;
+}
+#attrstable td:last-child {
+  text-align:right;
+}
+.settings-button {
+  font-size: 11px;
+}
+
+#graphgroup {
+  margin: 8px auto;
+  color: #333;
+  -moz-box-shadow: 4px 4px 4px #666;
+  -webkit-box-shadow: 4px 4px 4px #666;
+  box-shadow: 4px 4px 4px #666;
+  border: solid 1px #4d4d4d;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  padding-bottom: 30px;
+  font-size: 11px;
+}
+#graphgroup thead th:first-child {
+  -moz-border-radius-topleft: 4px;
+  -webkit-border-top-left-radius: 4px;
+}
+#graphgroup thead th:last-child {
+  -moz-border-radius-topright: 4px;
+  -webkit-border-top-right-radius: 4px;
+}
+
+#graphgroup div.graphtitle {
+  margin: 0 auto;
+  padding-top: 4px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  display: block;
+  height: 26px;
+  background: #bfe0ec;
+  text-transform: capitalize;
+  -moz-border-radius-topright: 4px;
+  -webkit-border-top-right-radius: 4px;
+}
+
+#graphGroupTable {
+  max-width: 650px;
+}
+#graphGroupTable div.graphtitle {
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+  display: block;
+  height: default;
+  background: none;
+  text-transform: capitalize;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+}
+
+div.graphcaption {
+  margin-left: 60px;
+  width: 384px;
+  font-size: 11px;
+}
+
+div.errors {
+  width: 600px;
+  background: #eaeac0;
+  font: bold 13pt Verdana, Arial, Helvetica, sans-serif;
+  color: #ff0000;
+  border: 1px solid #70a0c0;
+  padding: 8px 8px 8px 8px;
+}
+
+div.tabletitle {
+  text-align: left;
+  font: bold 12pt Verdana, Arial, Helvetica, sans-serif;
+  color: #4f6b72;
+}
+
+#datatable {
+  margin: 8px auto;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border: solid 1px #4d4d4d;
+  -moz-box-shadow: 4px 4px 4px #666;
+  -webkit-box-shadow: 4px 4px 4px #666;
+  box-shadow: 4px 4px 4px #666;
+}
+
+#datatable th {
+  height: 24px;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  background: #bfe0ec;
+  padding: 4px 8px 0 8px;
+}
+#datatable thead th:first-child {
+  -moz-border-radius-topleft: 4px;
+  -webkit-border-top-left-radius: 4px;
+}
+#datatable thead th:last-child {
+  -moz-border-radius-topright: 4px;
+  -webkit-border-top-right-radius: 4px;
+}
+
+#datatable th.nobg {
+}
+
+#datatable td {
+  font-size: 11px;
+  padding: 2px 8px;
+}
+
+#datatable td.alt {
+}
+
+#datatable td.rowname {
+}
+
+#datatable th.spec {
+  font-weight: bold;
+}
+
+#datatable th.specalt {
+  font-weight: bold;
+}
+
+.reportgroup {
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #0079bc;
+  line-height: 16px;
+}
+.linklist {
+  list-style:none;
+  margin-left: 6px;
+  padding-left: 0;
+  font-size: 12px;
+}
+.pb-data-format {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 10px;
+  text-decoration: underline;
+  margin-left: 6px;
+}
+
+.footer {
+  margin-top: 20px;
+  padding-top: 6px;
+  border-top: 1px solid #333;
+  text-align: center;
+  font-size: 10px;
+}
+    </style><script type="text/javascript">
+    
+  function showParams( tID ) {
+    tbl = document.getElementById(tID);
+    var len = tbl.rows.length;
+
+    for (i=0; i<len;i++) {
+      if (tbl.rows[i].className == "params") {
+        if (tbl.rows[i].style.display == "") {
+          tbl.rows[i].style.display = 'none'
+        } else {
+          tbl.rows[i].style.display = ""
+        }
+      }
+    }
+  }
+</script></head>
+   <body>
+      <div class="reportBody">
+         <h4>Job</h4>
+      </div>
+      <table id="attrstable">
+         <tr>
+            <td class="attr">SmrtPipe version</td>
+            <td>1.87.139483</td>
+            <td></td>
+         </tr>
+         <tr>
+            <td class="attr">Job ID</td>
+            <td>000221002</td>
+            <td></td>
+         </tr>
+         <tr>
+            <td class="attr">Input</td>
+            <td>xml:input.xml</td>
+            <td></td>
+         </tr>
+         <tr>
+            <td class="attr">Settings</td>
+            <td>settings.xml</td>
+            <td><button class="settings-button" onclick="showParams('attrstable');">
+                  		      Show/Hide
+                  		    </button></td>
+         </tr>
+         <tr style="display: none;" class="params" id="item">
+            <td class="attr"></td>
+            <td>global.fetch</td>
+            <td>common/protocols/preprocessing/Fetch.1.xml</td>
+         </tr>
+         <tr style="display: none;" class="params" id="item">
+            <td class="attr"></td>
+            <td>global.version</td>
+            <td>1</td>
+         </tr>
+         <tr style="display: none;" class="params" id="item">
+            <td class="attr"></td>
+            <td>global.name</td>
+            <td>AmpliconAnalysis</td>
+         </tr>
+         <tr style="display: none;" class="params" id="item">
+            <td class="attr"></td>
+            <td>global.description</td>
+            <td>Amplicon Analysis</td>
+         </tr>
+         <tr style="display: none;" class="params" id="item">
+            <td class="attr"></td>
+            <td>global.state</td>
+            <td>active</td>
+         </tr>
+         <tr style="display: none;" class="params" id="item">
+            <td class="attr"></td>
+            <td>global.filtering</td>
+            <td>common/protocols/filtering/SFilter.1.xml</td>
+         </tr>
+         <tr style="display: none;" class="params" id="item">
+            <td class="attr"></td>
+            <td>global.barcodeRun</td>
+            <td>True</td>
+         </tr>
+         <tr style="display: none;" class="params" id="item">
+            <td class="attr"></td>
+            <td>p_barcode.moduleName</td>
+            <td>P_Barcode</td>
+         </tr>
+         <tr style="display: none;" class="params" id="item">
+            <td class="attr"></td>
+            <td>p_barcode.adapterSidePad</td>
+            <td>0</td>
+         </tr>
+         <tr style="display: none;" class="params" id="item">
+            <td class="attr"></td>
+            <td>p_barcode.barcodeRun</td>
+            <td>True</td>
+         </tr>
+         <tr style="display: none;" class="params" id="item">
+            <td class="attr"></td>
+            <td>p_barcode.mode</td>
+            <td>paired</td>
+         </tr>
+         <tr style="display: none;" class="params" id="item">
+            <td class="attr"></td>
+            <td>p_barcode.scoreFirst</td>
+            <td>True</td>
+         </tr>
+         <tr style="display: none;" class="params" id="item">
+            <td class="attr"></td>
+            <td>p_barcode.insertSidePad</td>
+            <td>0</td>
+         </tr>
+         <tr style="display: none;" class="params" id="item">
+            <td class="attr"></td>
+            <td>p_barcode.barcode.fasta</td>
+            <td>/home/UNIXHOME/bbowman/2014/09/HLA_Hackathon/SMRTbell_4x_barcodes.fasta</td>
+         </tr>
+         <tr style="display: none;" class="params" id="item">
+            <td class="attr"></td>
+            <td>p_barcode.score</td>
+            <td>11</td>
+         </tr>
+         <tr style="display: none;" class="params" id="item">
+            <td class="attr"></td>
+            <td>p_fetch.moduleName</td>
+            <td>P_Fetch</td>
+         </tr>
+         <tr style="display: none;" class="params" id="item">
+            <td class="attr"></td>
+            <td>p_ampliconanalysis.minSnr</td>
+            <td>5.0</td>
+         </tr>
+         <tr style="display: none;" class="params" id="item">
+            <td class="attr"></td>
+            <td>p_ampliconanalysis.minLength</td>
+            <td>3000</td>
+         </tr>
+         <tr style="display: none;" class="params" id="item">
+            <td class="attr"></td>
+            <td>p_ampliconanalysis.maxReads</td>
+            <td>2000</td>
+         </tr>
+         <tr style="display: none;" class="params" id="item">
+            <td class="attr"></td>
+            <td>p_ampliconanalysis.ignoreEnds</td>
+            <td>50</td>
+         </tr>
+         <tr style="display: none;" class="params" id="item">
+            <td class="attr"></td>
+            <td>p_ampliconanalysis.moduleName</td>
+            <td>P_AmpliconAnalysis</td>
+         </tr>
+      </table><br><div class="reportBody">
+         <h4>Reports</h4>
+      </div>
+      <p class="reportgroup">General</p>
+      <ul class="linklist">
+         <li><a href="workflow/Workflow.summary.html">Workflow</a></li>
+         <li><a href="results/barcode_report.html">Barcode Report</a></li>
+      </ul>
+      <p class="reportgroup">Diagnostic</p>
+      <ul class="linklist">
+         <li><a href="results/overview.html">Json Overview Report</a></li>
+         <li><a href="results/filter_reports_adapters.html">Json Adapter Report</a></li>
+      </ul>
+      <p class="reportgroup">AMPLICONS</p>
+      <ul class="linklist">
+         <li><a href="results/amplicon_analysis_consensus_report.html">Amplicon Analysis Consensus Report</a></li>
+         <li><a href="results/amplicon_analysis_input_report.html">Amplicon Analysis Input Report</a></li>
+      </ul>
+      <div class="reportBody">
+         <h4>Data</h4>
+      </div>
+      <ul class="linklist">
+         <li>Barcoded Reads<a class="pb-data-format" href="data/barcoded-fastqs.tgz" type="text/plain">fastq</a></li>
+         <li>Amplicon Sequences<a class="pb-data-format" href="data/amplicon_analysis_zmws.csv" type="text/csv">csv</a><a class="pb-data-format" href="data/amplicon_analysis.fasta" type="text/plain">fasta</a><a class="pb-data-format" href="data/amplicon_analysis.fastq" type="text/plain">fastq</a><a class="pb-data-format" href="data/amplicon_analysis_summary.csv" type="text/csv">csv</a><a class="pb-data-format" href="data/amplicon_analysis.csv" type="text/csv">csv</a></li>
+      </ul>
+      <div class="reportBody">
+         <h4>Log</h4>
+      </div>
+      <ul class="linklist">
+         <li><a type="text/plain" href="log/smrtpipe.log">
+               Log file
+               </a></li>
+      </ul>
+      <p class="footer">
+         Generated by SMRT Pipe
+         16 SEP 2014 8:39 P.M..<br>
+         For Research Use Only. Not for use in diagnostic procedures.
+         
+      </p>
+   </body>
+</html>
