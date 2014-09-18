@@ -3,7 +3,7 @@ import sys
 
 from setuptools import setup, find_packages
 
-__author__ = 'bbowman'
+__author__ = 'Brett Bowman'
 
 # Check that a valid, modern version of Python is being used
 if ("install" in sys.argv) and sys.version_info < (2, 7, 0):
