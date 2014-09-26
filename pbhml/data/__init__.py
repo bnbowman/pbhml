@@ -11,6 +11,9 @@ def _get_abs_path(filename):
     return resource_filename(Requirement.parse('pbhml'),
                              'data/{0}'.format(filename))
 
+def _get_job_path(dirname):
+    return _get_abs_path("jobs/{0}".format(dirname))
+
 def _get_conexio_path(filename):
     return _get_abs_path("typings/conexio/{0}".format(filename))
 
@@ -22,3 +25,6 @@ def get_f3_xml():
 
 def get_f3_txt():
     return _get_hla_tools_path(HLA_TOOLS_FILES[0])
+
+def get_split_dir():
+    return _get_job_path("Split")
