@@ -1,3 +1,3 @@
 __author__ = 'bbowman@pacificbiosciences.com'
 
-from HlaToolsReader import HlaToolsReader
+from .HlaToolsReader import *

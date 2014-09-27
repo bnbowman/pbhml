@@ -40,6 +40,7 @@ class SmrtHmlReport:
         self._hml = self._initialize_hml()
         self._sample = self._initialize_sample()
         self._records = []
+        self._processed = False
 
     @staticmethod
     def _initialize_hml():
@@ -107,10 +108,16 @@ class SmrtHmlReport:
     def records_for_locus(self, locus):
         return [r for r in self._records if r.locus == locus]
 
+    def to_tree(self):
+        if not self._processed:
+            self._process_records()
+            self._processed = True
+        return et.ElementTree(self._hml)
+
     def __str__(self):
-        self._process_records()
-        #return str(self._records[0])
+        if not self._processed:
+            self._process_records()
+            self._processed = True
         tree = et.ElementTree(self._hml)
-        tree.write("test.xml")
         root = tree.getroot()
         return et.tostring(root, encoding='utf8', method='xml')

@@ -2,9 +2,9 @@ __author__ = 'bbowman@pacificbiosciences.com'
 
 import os
 
-from pbhml.job import SmrtAnalysisJob
-from pbhml.reader import HlaToolsReader
-from pbhml.report.SmrtHmlReport import SmrtHmlReport
+from job import SmrtAnalysisJob
+from reader import HlaToolsReader
+from SmrtHmlReport import SmrtHmlReport
 
 class SmrtHmlReportWriter:
     """A Class for writing multiple HML Reports from SMRT Sequencing data
@@ -51,7 +51,7 @@ class SmrtHmlReportWriter:
     def barcodes(self):
         return sorted(set(self.sequence_barcodes) & set(self.typing_barcodes))
 
-    def write_report(self, barcode):
+    def write_report(self, barcode, output_file):
         assert barcode in self.barcodes
         report = SmrtHmlReport()
         records = self._job.sequence_records(barcode)
@@ -59,7 +59,8 @@ class SmrtHmlReportWriter:
             name = record.name.strip().split()[0]
             try:
                 typing = self._typing[name]
-            except:
+            except KeyError:
                 continue
             report.add_record(name, record.sequence, typing)
-        return str(report)
+        tree = report.to_tree()
+        tree.write(output_file)

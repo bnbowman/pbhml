@@ -1,3 +1,3 @@
 __author__ = 'bbowman@pacificbiosciences.com'
 
-from SmrtAnalysisJob import SmrtAnalysisJob
+from .SmrtAnalysisJob import *
