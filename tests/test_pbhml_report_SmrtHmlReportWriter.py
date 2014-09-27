@@ -23,4 +23,4 @@ class TestSmrtHmlReportWriter:
         sequencingZmws, and finds the subreads for each Zmw.
         """
         assert_list_equal(['F3--R3'], self.hml_writer.barcodes)
-
+        assert_equal('', self.hml_writer.write_report('F3--R3'))

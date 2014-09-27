@@ -4,7 +4,7 @@ import os
 
 from pbhml.job import SmrtAnalysisJob
 from pbhml.reader import HlaToolsReader
-from pbhml.report import SmrtHmlReport
+from pbhml.report.SmrtHmlReport import SmrtHmlReport
 
 class SmrtHmlReportWriter:
     """A Class for writing multiple HML Reports from SMRT Sequencing data
@@ -53,7 +53,7 @@ class SmrtHmlReportWriter:
 
     def write_report(self, barcode):
         assert barcode in self.barcodes
-        report = SmrtHmlReport('3.16.0')
+        report = SmrtHmlReport()
         records = self._job.sequence_records(barcode)
         for record in records:
             name = record.name.strip().split()[0]
@@ -62,3 +62,4 @@ class SmrtHmlReportWriter:
             except:
                 continue
             report.add_record(name, record.sequence, typing)
+        return str(report)
