@@ -3,9 +3,7 @@ __author__ = 'bbowman@pacificbiosciences.com'
 from collections import namedtuple
 
 from base import BaseTypingReader
-
-def sorted_set(a_list):
-    return sorted(list(set(a_list)))
+from utils import sorted_set, sample_from_file
 
 HlaToolsRecord = namedtuple('HlaToolsRecord', 'name glen gtype gpctid nmis indel clen ctype cpctid type')
 
@@ -17,10 +15,10 @@ class HlaToolsReader(BaseTypingReader):
 
     def __init__(self, filename):
         self._filename = filename
+        self._barcodes = [sample_from_file(filename)]
         self._records = self._parse_records()
         self._types_by_name = {r.name: r.type for r in self._records}
         self._loci = sorted_set([r.gtype.split('*')[0] for r in self._records])
-        print self._records
 
     def _parse_records(self):
         records = []
@@ -56,6 +54,9 @@ class HlaToolsReader(BaseTypingReader):
         return self._loci
 
     @property
+    def barcodes(self):
+        return self._barcodes
+
     def __getitem__(self, item):
         """
         Return the typing associated with a specified sequence name

@@ -1,10 +1,8 @@
 __author__ = 'bbowman@pacificbiosciences.com'
 
 import os
-
-
-def sample_from_file( filename ):
-    return filename.split('/')[-1].split('.')[0]
+from pbcore.io import FastqReader
+from utils import sample_from_file
 
 
 class SmrtAnalysisJob:
@@ -82,3 +80,8 @@ class SmrtAnalysisJob:
     @property
     def barcodes(self):
         return self._barcodes
+
+    def sequence_records(self, barcode):
+        assert barcode in self.barcodes
+        barcode_file = self.sequence_files[barcode]
+        return iter(FastqReader(barcode_file))

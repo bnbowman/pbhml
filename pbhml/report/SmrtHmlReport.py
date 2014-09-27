@@ -1,36 +1,28 @@
 __author__ = 'bbowman@pacificbiosciences.com'
 
-from pbhml.job import SmrtAnalysisJob
-from pbhml.reader import HlaToolsReader
+class SmrtHmlRecord:
+    def __init__(self, name, sequence, type):
+        self._name = name
+        self._sequence = sequence
+        self._type = type
+    @property
+    def name(self):
+        return self._name
+    @property
+    def sequence(self):
+        return self._sequence
+    @property
+    def type(self):
+        return self._type
 
 class SmrtHmlReport:
-    """A Class for representing and writing an HML Report from SMRT Sequencing data
+    """A class for representing a SMRT Analysis HML Report
     """
 
-    def __init__(self, typing, job):
-        self._typing = self._set_typing( typing )
-        self._job = self._set_job( job )
+    def __init__(self, version):
+        self._version = version
+        self._records = []
 
-    def _set_typing(self, typing):
-        if isinstance(typing, str):
-            try:
-                 reader = HlaToolsReader(typing)
-            except:
-                raise ValueError("Not a recognized HLA Typing result '{0}'".format(typing))
-        elif isinstance(typing, HlaToolsReader):
-            return typing
-        else:
-            raise TypeError("Not a recognized HLA Typing result '{0}'".format(typing))
-        return reader
-
-    def _set_job(self, job):
-        if isinstance(job, str):
-            try:
-                 reader = SmrtAnalysisJob(job)
-            except:
-                raise ValueError("Not a recognized SMRT Analysis Job '{0}'".format(job))
-        elif isinstance(job, SmrtAnalysisJob):
-            return job
-        else:
-            raise TypeError("Not a recognized SMRT Analysis Job '{0}'".format(job))
-        return reader
+    def add_record(self, name, sequence, type):
+        record = SmrtHmlRecord(name, sequence, type)
+        self._records.append( record )
