@@ -2,7 +2,9 @@
   <dictionary name="bbowman">
     <words>
       <w>amplicon</w>
+      <w>barcodes</w>
       <w>dirpath</w>
+      <w>fastq</w>
       <w>filepath</w>
       <w>pbcore</w>
       <w>pbhml</w>
